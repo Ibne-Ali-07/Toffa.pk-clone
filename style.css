@@ -1,0 +1,273 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin-left: 15px;
+    margin-right: 10px;
+}
+
+/* --- Header/Navbar --- */
+header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: white;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 2px solid #E2DEE6;
+    width: 100%;
+    max-width: 340px;
+}
+
+.search-box:hover {
+    border-color: #B1B0B8;
+}
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    margin-left: 5px;
+    height: 25px;
+    width: 100%;
+}
+
+.search-box i {
+    color: #333;
+}
+
+.center img {
+    height: 50px;
+    object-fit: contain;
+}
+
+.right i {
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* --- Nav Inner --- */
+.nav-inn {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px 20px;
+    list-style: none;
+}
+
+.nav-inn li a {
+    color: #37352f;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-inn li a:hover {
+    color: red;
+}
+.nav-inn li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 4px;
+    background-color: red;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s ease-in;
+}
+.nav-inn li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background-image: url('./Assets/box1_image.jpg');
+    height: 580px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    margin-top: 10px;
+}
+
+/* --- Shopping Section --- */
+.shopping-section {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.box {
+    width: 30%;
+    min-width: 260px;
+}
+
+.box-image {
+    height: 100%;
+    background-color: yellow;
+    overflow: hidden;
+    cursor: pointer;
+}
+.box-image img {
+    transition: transform 0.3s ease-in-out;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.box-image img:hover {
+    transform: scale(1.1);
+}
+
+/* --- Section Headers --- */
+h1 {
+    border-bottom: 1px solid #E2DEE6;
+    padding: 10px 0;
+    margin: 20px 0 10px;
+    opacity: 0.8;
+    text-align: left;
+}
+
+/* --- Main Section (EXPLORE + NEW ARRIVALS) --- */
+.main,
+.main2 {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.box-content {
+    width: 22%;
+    min-width: 260px;
+    text-align: center;
+}
+
+.box-image2 {
+    height: 400px;
+    width: 100%;
+    border-top: 1px solid black;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.box-image2 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+.box-image2:hover img {
+    transform: scale(1.1);
+}
+
+.box-content p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.box-content b {
+    display: block;
+    margin-top: 5px;
+    color: #333;
+}
+
+/* --- Footer --- */
+footer {
+    background: #F7F7F7;
+}
+
+.foot-panel {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    border-top: 1px solid #E2DEE6;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.foot-panel ul {
+    list-style: none;
+    text-align: left;
+}
+.foot-panel ul p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.foot-panel ul a {
+    display: block;
+    font-size: 0.9rem;
+    color: #37352F;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.foot-panel2 {
+    text-align: center;
+    padding: 15px;
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 992px) {
+    .search-box input {
+        width: 100%;
+    }
+
+    .box-content {
+        width: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-inn {
+        flex-direction: column;
+        padding-left: 10px;
+    }
+
+    .hero-section {
+        height: 300px;
+    }
+
+    .box,
+    .box-content {
+        width: 100%;
+    }
+
+    .box-image2 {
+        height: 300px;
+    }
+
+    .foot-panel {
+        display: grid;
+    }
+}
